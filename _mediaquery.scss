@@ -1,0 +1,118 @@
+$res-402 : "(max-width: 402px)";
+$res-508 : "(max-width: 508px)";
+$res-630 : "(max-width: 630px)";
+$res-768 : "(max-width: 768px)";
+$res-800 : "(max-width: 800px)";
+$res-1114 : "(max-width: 1114px)";
+$res-1200 : "(min-width: 1200px)";
+
+@mixin responsive_402() {
+	@media #{$res-402} {
+		@content;
+	}
+}
+
+@mixin responsive_508() {
+	@media #{$res-508} {
+		@content;
+	}
+}
+@mixin responsive_630() {
+	@media #{$res-630} {
+		@content;
+	}
+}
+@mixin responsive_768() {
+	@media #{$res-768} {
+		@content;
+	}
+}
+@mixin responsive_800() {
+	@media #{$res-800} {
+		@content;
+	}
+}
+@mixin responsive_1114() {
+	@media #{$res-1114} {
+		@content;
+	}
+}
+*{margin:0;padding: 0};
+@include responsive_768{
+
+	nav.navbar.navbar-light.bg-light.navbar-fixed-top {
+    background: #dc3a3c;
+  }
+
+  .navbar-light .navbar-toggler {
+    background: none;
+    color: white !important;
+    border-color: #f7f7f7;
+    font-size: 16px;
+  }
+
+  nav.navbar.navbar-light.bg-light.navbar-fixed-top .nav-link {
+    color: white;
+  }
+
+  nav.navbar.navbar-light.bg-light.navbar-fixed-top .nav-link.active::after {
+    bottom: 3px;
+   background-color: #ffffff;
+  }
+
+  nav.navbar.navbar-light.bg-light.navbar-fixed-top a.nav-link::after {
+    bottom: 3px;
+    background-color: #ffffff00;
+  }
+
+  nav.navbar.navbar-light.bg-light.navbar-fixed-top a.nav-link {
+    line-height: initial;
+  }
+	
+	div#exCollapsingNavbar2{
+		position: relative;
+	}
+	div#exCollapsingNavbar2::after {
+		position: absolute;
+		content: "";
+		bottom: -3px;
+		right: 50%;
+		transform: translateX(50%);
+		z-index: 9999;
+		width: 39px;
+		height: 3px;
+		background: #e1e1e1;
+	}
+
+	.blockInfo .container .intro {
+		vertical-align: middle;
+	}
+
+
+	.timeline {
+		background-position: 38px top!important;
+		li, .odd {
+			margin: 0px 0 20px 43px!important;
+			width: 85%!important;
+			opacity: 1 !important;
+		}
+		.point, .odd .point {
+			left: -32px;
+			right: auto;
+		}
+		.bubble{
+			float:left!important;
+		}
+		.bubble, .odd .bubble {
+			margin: 0px 0 0 30px!important;
+			width: 80%!important;
+			padding: 22px 30px 25px 32px!important;
+		}
+		.arrow {
+			background-position: right top!important;
+			left: -10px;
+			right: auto!important;
+		}
+	}
+
+};

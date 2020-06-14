@@ -1,0 +1,344 @@
+$color-main:#ffffff;
+$color-green:#7fc246;
+$color-gray:#838383;
+$color-gray-light:#777777;
+$tag-span:span;
+
+@mixin font($font-family, $font-file) {
+	@font-face {
+		font-family: $font-family;
+		src: url($font-file+'.otf');
+
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+@include font("Aileron-Bold", 'fonts/Aileron-Bold');
+@include font("Aileron-Italic", 'fonts/Aileron-Italic');
+@include font("Aileron-Light", 'fonts/Aileron-Light');
+@include font("Aileron-Thin", 'fonts/Aileron-Thin');
+@include font("Aileron-Regular", 'fonts/Aileron-Regular');
+
+
+@mixin font-11-R() {
+	font-size: 1.1em;
+	font-family: Aileron-Regular;
+}
+
+@mixin font-11-B() {
+	font-size: 1.1em;
+	font-family:Aileron-Bold;
+}
+
+@mixin font-12() {
+	font-size: 1.2em;
+	font-family:Aileron-Bold;
+}
+@mixin font-14-I() {
+	font-size: 1.4em;
+	font-family:Aileron-Italic;
+}
+@mixin font-14-R() {
+	font-size: 1.4em;
+	font-family:Aileron-Regular;
+}
+@mixin font-16() {
+	font-size: 1.6em;
+	font-family:Aileron-Bold;
+}
+
+@mixin font-20() {
+	font-size: 2em;
+	font-family:Aileron-Light;
+}
+
+@mixin font-50() {
+	font-size: 5em;
+	font-family:Aileron-Thin;
+}
+
+html {
+	font-size: 62.5%
+}
+body {
+	padding: 0 80px;
+}
+
+.wrapper {
+	text-align: center;
+	max-width: 1040px;
+	height: 100vh;
+	margin:0 auto; 
+}
+
+
+.topHeader {
+	.container-fluid {
+		height: 64px;
+		.row{
+			display: flex;
+			justify-content: space-between;
+		}
+		.left {
+			@include font-20;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			line-height: 64px;
+			justify-content: center;
+			div:not(:nth-child(1)){
+				margin-left: 1px;
+			}
+			span{
+				margin-left: 9px;
+				color: $color-green;
+				padding-right: 5px;
+			}
+			.urban span{
+				border-left: 1px solid gray;
+				padding-left: 11px;
+			}
+
+		}
+		.right {
+			padding: 0;
+			position: relative;
+			text-align: right;
+			list-style-type: none;
+			a{
+				
+				line-height: 64px;
+				@include font-20;
+				color: $color-gray;
+				text-decoration: none;
+			}
+			.dropdown-toggle::after {
+				display:none;
+			}
+			#login-dp{
+
+				min-width: 268px;
+				padding: 17px 14px 0;
+				background-color: #ffffff;
+				position: absolute;
+				top:100%;	
+				right: 0;
+				left:unset;
+				box-shadow: 0px 2px 20px -7px;
+			}
+			ul#login-dp::after {
+				content: "";
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				background: #ffffff;
+				z-index: 0;
+				top: -7px;
+				right: 24px;
+				transform: rotate(45deg);
+				
+			}
+			ul#login-dp::before {
+				content: "";
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				background: #ffffff;
+				z-index: 0;
+				top: -8px;
+				right: 24px;
+				transform: rotate(45deg);
+				border: 1px gray solid;
+			}
+			.form-group{
+				input {
+					height: 3.8rem;
+					border-radius: 5px;
+				}
+				.form-control{
+					@include font-14-R;
+				}
+				.form-control:focus {
+					color: #55595c;
+					background-color: #fff;
+					border-color: #7fc246;
+					outline: 0;
+				}
+				button{
+					margin-top: 10px;
+					height: 3.8rem;
+					background: #7fc246;
+					border-radius: 5px;
+					border-color: #7fc146;
+					@include font-16;
+				}
+				.checkbox {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					label {
+						display: flex;
+						align-items: center;
+						@include font-11-R;
+						color: #808080bf;
+						margin:unset;
+					}
+					input[type="checkbox"] {
+
+						height: 23px !important;
+						margin-right: 8px;
+					}
+					.help-block.text-right a{
+						display: inline-block;
+						@include font-11-B;
+						color:$color-green;
+						line-height: 16px;
+					}
+				}
+				
+			}
+			
+		}
+	}
+}
+.topHeader::after {
+	content: "";
+	border-bottom: 1px solid #80808059;
+	width: 100%;
+	position: absolute;
+	left: 0;
+}
+
+
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	.col1 {
+		max-width: 318px;
+		text-align: right;
+		.wraptext {
+			margin-top: 5rem;
+		}
+		.text1,.text2 {
+			span{
+				display: block;
+				color:$color-green;
+			}
+			line-height: 40px;
+			@include font-50;
+			width: auto;
+		}
+		.line{
+			border-bottom: 1.5px solid #80808024;
+			width: 83px;
+			display: inline-block;
+			margin-top: 2.2rem;
+			margin-bottom: 1.7rem;
+		}
+		.text3 {
+			margin-top: 2.6rem;
+			padding-left: 45px;
+			display: inline-block;
+			@include font-14-I;
+			color:$color-gray-light;
+			// p{
+			// 	@include font-14-I;
+			// 	color:$color-gray-light;
+			// }
+		}
+	}
+	.img{
+		position: absolute;
+		top: 21px;
+		right: 52.5%;
+		transform: translateX(50%);
+		z-index: 1;	
+
+	}
+	
+	.col2{
+		width: 308px;
+		text-align: right;
+		.form-row{
+			margin-top: 5.8rem;
+			color: #a8a5a5!important;
+			h1{
+				@include font-20;
+				span{color: $color-green;padding-right: 5px};
+				margin-bottom: 1.7rem;
+			}
+			.form-control {
+				@include font-14-R;
+				font-size: 1.4em;
+				color: #a8a5a5;
+				margin-top: 0.8rem;
+				border-radius: 8px;
+				height: 3.6rem;
+				line-height: 3.6rem;
+				padding-left: 1.6rem;
+			}
+			.form-control:focus {
+				color: #a8a5a5;
+				background-color: #fff;
+				border-color: $color-green;
+				outline: 0;
+			}
+		}
+		.btn{
+			margin-top: 0.7rem;
+			height: 35px;
+			line-height: normal;
+			border-radius: 5px;
+			@include font-16;
+			color: $color-main;
+		}
+		.btn-success {
+			background-color: $color-green;
+			border-color: #629437;
+		}
+		.blockApp{
+			margin-top: 7.2rem;
+			h5 {
+				@include font-12;
+				color:#aeadad;
+				span{
+					color:$color-gray;
+				}
+			}
+			.logo{
+				margin-top: .9rem;
+				display: flex;
+				justify-content: flex-end;
+				.google {
+					margin-left: 1rem;
+				}
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+		.copyright{
+		@include font-11-R;
+		position: absolute;
+		right: 0;
+		bottom: -46px;
+		z-index: 9;
+		transform: translateY(19rem);
+		span {
+			color:$color-green;
+			border-left: 1px solid gray;
+			padding-left: 10px;
+			margin-left: 6px;
+		}
+	}
+		
+	}
+	
+}
+//media query
+
+@import "mediaquery"

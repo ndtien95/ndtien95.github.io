@@ -1,0 +1,99 @@
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  height: 3.4rem;
+  padding: 0 0.8rem;
+  outline: none;
+}
+
+.btn--hover {
+  opacity: 1;
+}
+
+.btn--large {
+  width: 21.4rem;
+}
+
+.btn--medium {
+  width: 14rem;
+  margin-left: 1rem;
+}
+
+.btn--small {
+  height: 3rem;
+  min-width: 4rem;
+  font-size: 2rem;
+  color: var(--color-grey);
+  margin: 0 1.5rem;
+  background: none;
+}
+
+.btn--primary, .btn--active {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  background-color: var(--color-white);
+  text-transform: capitalize;
+}
+
+.btn--sub {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.btn--sub:hover {
+  background-color: var(--color-white-smoke);
+}
+
+.btn--google {
+  background-color: var(--color-white);
+  color: var(--color-grey);
+}
+
+.btn--facebook {
+  background-color: var(--color-facebook);
+  color: var(--color-white);
+}
+
+.btn--sms {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-size: 1.6rem !important;
+}
+
+.btn--social {
+  display: flex !important;
+  align-items: center;
+  text-transform: unset !important;
+  font-size: 1.3rem;
+  height: 3.2rem !important;
+  border-radius: 3px !important;
+  flex: 1;
+}
+
+.btn--social:not(:nth-last-child(1)) {
+  margin-right: 1rem;
+}
+
+.btn--search {
+  height: 34px;
+  padding: 0 15px;
+  min-width: 60px;
+  max-width: 190px;
+}
+
+.btn--pagination {
+  height: 3rem;
+  min-width: 4rem;
+  font-size: 3rem;
+  color: var(--color-grey);
+  background: none;
+}

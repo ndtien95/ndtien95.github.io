@@ -1,0 +1,121 @@
+.row {
+  max-width: var(--grid-width);
+  margin: 0 auto;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include clearfix;
+  &:not(:last-child) {
+    //margin-bottom: 0rem;
+  }
+  [class^="col-1"] {
+    float: left;
+    margin-bottom: var(--gutter-horizontal);
+    &:not(:nth-child(5n)) {
+      margin-right: var(--gutter-horizontal);
+    }
+  }
+  .col-left {
+    max-width: 15.75%;
+    width: 15.75%;
+    margin-right: var(--gutter-horizontal);
+  }
+  .col-right {
+    width: calc(84.25% - var(--gutter-horizontal));
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - var(--gutter-horizontal)) / 2);
+  }
+  .col-1-of-3 {
+    width: calc((100% - 2 * var(--gutter-horizontal)) / 3);
+  }
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * var(--gutter-horizontal)) / 3) + var(--gutter-horizontal));
+  }
+  .col-1-of-4 {
+    width: calc((100% - 3 * var(--gutter-horizontal)) / 4);
+  }
+  .col-2-of-4 {
+    width: calc(1 * ((100% - 3 * var(--gutter-horizontal)) / 2) + var(--gutter-horizontal));
+  }
+  .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * var(--gutter-horizontal)) / 4) + 2 * var(--gutter-horizontal));
+  }
+  .col-1-of-5 {
+    width: calc((100% - 4 * var(--gutter-horizontal)) / 5);
+  }
+}
+
+@include respond(tab-port) {
+  :root {
+    --grid-width: 90rem;
+  }
+  .row {
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    //flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include clearfix;
+    &:not(:last-child) {
+      margin-bottom: 0rem;
+    }
+    [class^="col-1"]:not(:nth-child(5n)) {
+      margin-right: 0;
+    }
+    [class^="col-1"]:not(:nth-child(4n)) {
+      margin-right: var(--gutter-horizontal);
+    }
+
+    .t-col-0 {
+      display: none;
+    }
+    .t-col-full {
+      width: 100%;
+    }
+
+    .t-col-1-of-4 {
+      width: calc((100% - 3 * var(--gutter-horizontal)) / 4);
+    }
+  }
+}
+@include respond(phone) {
+  :root {
+    --grid-width: 90rem;
+  }
+  .container .row,.footer .row{
+    padding: 1rem;
+  }
+  .flex-shrink{
+    flex-shrink: 0;
+  }
+  .row {
+    
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    //flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include clearfix;
+    &:not(:last-child) {
+      margin-bottom: 0rem;
+    }
+    [class^="col-1"]:not(:nth-child(5n)) {
+      margin-right: 0;
+    }
+    [class^="col-1"]:not(:nth-child(4n)) {
+      margin-right: 0;
+    }
+    [class^="col-1"]:not(:nth-child(2n)) {
+      margin-right: var(--gutter-horizontal);
+    }
+
+    .m-col-1-of-2 {
+      width: calc((100% - var(--gutter-horizontal)) / 2);
+    }
+  }
+}

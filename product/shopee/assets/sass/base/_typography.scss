@@ -1,0 +1,88 @@
+// // body {
+// //     font-family: "Lato", sans-serif;
+// //     font-weight: 400;
+// //     font-size: 1.6rem;
+// //     line-height: 1.7;
+// //     color: $color-grey;
+// }
+
+// .h1 {
+//   color: $color-white;
+//   text-transform: uppercase;
+//   margin-bottom: 6rem;
+//   &--main {
+//     display: block;
+//     font-size: 6.2rem;
+//     font-weight: 400;
+//     letter-spacing: 1.5rem;
+//     animation: moveInLeft 1s ease-out;
+//   }
+//   &--sub {
+//     display: block;
+//     font-size: 2rem;
+//     font-weight: 700;
+//     letter-spacing: 1.8rem;
+//     animation: moveInRight 1s ease-out;
+//   }
+// }
+.heading-primary {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+
+}
+.heading-secondary {
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: inline-block;
+  cursor: pointer;
+  color: var(--color-black);
+}
+.heading-tertiary {
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: var(--color-grey);
+  text-decoration: none;
+  list-style-type: none;
+}
+.title-primary {
+  color: var(--color-grey-blur);
+  line-height: 4rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+@include respond(phone) {
+  .heading-primary {
+    &--main {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+    &--sub {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+
+@include respond(tab-port) {
+  .headind-secondary {
+    font-size: 3rem;
+  }
+}
+
+@include respond(phone) {
+  .headind-secondary {
+    font-size: 2.5rem;
+  }
+}
+
+
+// base/_typography.scss
+// .paragraph {
+//     font-size: 1.8rem;
+//     &:not(:last-child) {
+//         margin-bottom: 3rem;
+//     }
+// }

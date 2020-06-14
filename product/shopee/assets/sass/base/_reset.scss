@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: roboto,sans-serif;
+    font-size: 62.5%;
+}
+
+@include respond(tab-land) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@include respond(tab-port) {
+    html {
+        font-size: 50%;
+    }
+}
+
+html,body {
+     box-sizing: border-box;
+     a:-webkit-any-link {text-decoration:none};
+}
+

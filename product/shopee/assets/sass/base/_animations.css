@@ -1,0 +1,29 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes Growth {
+  0% {
+    transform: scale(var(--growth-from));
+  }
+  100% {
+    transform: scale(var(--growth-to));
+  }
+}
+
+@keyframes mobileSearchSideIn {
+  0% {
+    z-index: 0;
+    opacity: 0;
+    top: calc(var(--height-header) / 2);
+  }
+  100% {
+    opacity: 1;
+    top: var(--height-header);
+  }
+}

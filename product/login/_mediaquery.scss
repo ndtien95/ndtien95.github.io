@@ -1,0 +1,152 @@
+$res-402 : "(max-width: 402px)";
+$res-508 : "(max-width: 508px)";
+$res-630 : "(max-width: 630px)";
+$res-768 : "(max-width: 768px)";
+$res-800 : "(max-width: 800px)";
+$res-1114 : "(max-width: 1114px)";
+$res-1200 : "(min-width: 1200px)";
+
+@mixin responsive_402() {
+	@media #{$res-402} {
+		@content;
+	}
+}
+
+@mixin responsive_508() {
+	@media #{$res-508} {
+		@content;
+	}
+}
+@mixin responsive_630() {
+	@media #{$res-630} {
+		@content;
+	}
+}
+@mixin responsive_768() {
+	@media #{$res-768} {
+		@content;
+	}
+}
+@mixin responsive_800() {
+	@media #{$res-800} {
+		@content;
+	}
+}
+@mixin responsive_1114() {
+	@media #{$res-1114} {
+		@content;
+	}
+}
+
+
+
+@include responsive_1114{
+
+	.img{display: none;}
+	.main {
+		.copyright {
+			right: 50%;
+			transform: translateX(50%);
+		}
+	}
+};
+*{margin:0;padding: 0};
+@include responsive_800{
+
+	.topHeader {
+		.row{
+			display: flex;
+			flex-direction:column;
+
+		}
+		.container-fluid .right {
+			padding: 0;
+			position: relative;
+			text-align: right;
+			margin: 0 auto;
+			#login-dp {
+				right: 50%;
+				transform: translateX(50%);
+			}
+			ul#login-dp::after {
+				right: 125px;
+			}
+			ul#login-dp::before {
+				right: 125px;
+			}
+		}
+	}
+	.main{
+		margin-top: 64px;
+		.col1 {
+			text-align: left;
+			padding-right: 14px;
+			.text3{
+				padding-left: unset;
+			}
+			.text1,.text2{
+				font-size: 3em;
+				span{
+					display: inline;
+				}
+			}
+			.line{
+				margin:0;
+			}
+		}
+	}
+
+};
+
+
+
+@include responsive_768{
+	.topHeader{
+		.right a{
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.main{
+		margin-top: 64px;
+	}
+}
+
+@include responsive_630{
+
+	.topHeader{
+		.urban span {
+			border-left: none!important;
+		}
+	}
+	.topHeader::after {
+		top: 194px;
+		border-bottom: 1px dashed gray;
+		
+	}
+	.main{
+		margin-top: 64*2px;
+		.col1{
+			display: none;
+		}
+		.col2 {
+			margin:0 auto;
+			.form-row h1 {
+				text-align: center;
+			}
+			.copyright {
+				right: 50%;
+				bottom: -46px;
+				transform: translate(50%,19rem);
+				text-align: center;
+			}
+		}
+	}
+};
+
+
+@include responsive_402{
+	body{
+		padding:0 10px;
+	}
+};
